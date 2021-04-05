@@ -1,0 +1,66 @@
+const int Buzzer = 8;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(Buzzer, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+ if(Serial.available()){
+
+  char val = Serial.read();
+  
+  if(val == 'a'){
+    tone(Buzzer,262);
+    delay(500);        
+    noTone(Buzzer); 
+  }
+
+   if(val == 'b'){
+    tone(Buzzer,294);
+    delay(500);        
+    noTone(Buzzer);    
+  }
+
+  if(val == 'c'){
+    tone(Buzzer,330);
+    delay(500);        
+    noTone(Buzzer); 
+  }
+
+  if(val == 'd'){
+    tone(Buzzer,349);
+    delay(500);        
+    noTone(Buzzer); 
+  }
+
+  if(val == 'e'){
+    tone(Buzzer,395);
+    delay(500);        
+    noTone(Buzzer); 
+  }
+
+  if(val == 'f'){
+    tone(Buzzer,440);
+    delay(500);        
+    noTone(Buzzer); 
+  }
+
+  if(val == 'g'){
+    tone(Buzzer,494);
+    delay(500);        
+    noTone(Buzzer); 
+  }
+
+  if(val == 'h'){
+    tone(Buzzer,523);
+    delay(500);        
+    noTone(Buzzer); 
+  }
+  
+    
+ }
+ 
+}
