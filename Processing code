@@ -1,0 +1,98 @@
+import controlP5.*;
+import processing.serial.*;
+
+Serial port;
+
+ControlP5 cp5;
+
+void setup(){
+  
+  size(300,400);
+  
+  printArray(Serial.list());
+  
+  port = new Serial(this, "COM3", 9600);
+  
+  cp5 = new ControlP5(this);
+  
+  cp5.addButton("doo")
+    .setPosition(50, 40)
+    .setSize(50, 100)
+    ;
+    
+   cp5.addButton("re")
+    .setPosition(100, 40)
+    .setSize(50, 100)
+    ;
+    
+   cp5.addButton("mi")
+    .setPosition(150, 40)
+    .setSize(50, 100)
+    ;
+    
+    cp5.addButton("fa")
+    .setPosition(200, 40)
+    .setSize(50, 100)
+    ;
+    
+    cp5.addButton("so")
+    .setPosition(50, 140)
+    .setSize(50, 100)
+    ;
+    
+    cp5.addButton("la")
+    .setPosition(100, 140)
+    .setSize(50, 100)
+    ;
+    
+    cp5.addButton("si")
+    .setPosition(150, 140)
+    .setSize(50, 100)
+    ;
+    
+    cp5.addButton("dooo")
+    .setPosition(200, 140)
+    .setSize(50, 100)
+    ;
+  
+
+}
+
+void draw(){
+  
+  background(255, 0, 0);
+  text("Digital Piano", 110, 30);
+
+}
+
+void doo(){
+  port.write('a');
+}
+
+void re(){
+  port.write('b');
+}
+
+void mi(){
+  port.write('c');
+}
+
+void fa(){
+  port.write('d');
+}
+
+void so(){
+  port.write('e');
+}
+
+void la(){
+  port.write('f');
+}
+
+void si(){
+  port.write('g');
+}
+
+void dooo(){
+  port.write('h');
+}
